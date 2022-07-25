@@ -1,0 +1,7 @@
+{
+  "name": "Final_Examen_RestApi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
