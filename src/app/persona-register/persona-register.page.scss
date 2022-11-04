@@ -1,0 +1,80 @@
+
+.circulo{
+    display: flex;
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #FFFFFF;
+    background-color: #DFE5F2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    z-index: 1;
+    overflow: hidden;
+   
+  }
+  .img{
+    width: 100%;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .cuadrado{
+    position: relative;
+    border-style: ridge;
+    border-color: blue;
+    border-radius: 10px;
+    height: 300px;
+    width: 350px;
+    background-color: #bbdcf6;
+  
+  }
+  .cuadradotexto1{
+    position:absolute;
+    top: 5px;
+    left: 170px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    height: 60px;
+    width: 150px;
+  }
+  .cuadradotexto2{
+    position:absolute;
+    top: 70px;
+    left: 170px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    height: 60px;
+    width: 150px;
+  }
+  .cuadradotexto3{
+    position:absolute;
+    top: 140px;
+    left: 170px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    height: 60px;
+    width: 150px;
+  }
+  .descripcion{
+    text-align: start;
+    position:absolute;
+    top: 210px;
+    left: 10px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    height: 80px;
+    width: 300px;
+  }
+
+  

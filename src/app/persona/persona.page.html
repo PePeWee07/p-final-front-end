@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Personas</ion-title>
+    <ion-buttons slot="start">
+      <!-- <ion-back-button defaultHref="/"></ion-back-button> -->
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- BOTON FLOTANTE -->
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" *ngIf="hidden2 == 1">
+    <ion-fab-button (click)="redirect()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- DATOS PERSONA --> 
+  <!-- <div class="gradient-border" id="box"> -->
+  <ion-row>
+    <ion-col sizeLg="6" sizeMd="6" sizeXs="12">
+      <ion-card color="color" *ngFor="let persona of personaSave">
+            <!-- header -->
+            <ion-card-header class="ion-text-center" color="danger">
+              <ion-label style="font-weight: bold; font-size: 20px;">
+                <ion-icon
+                name="person-circle-sharp"
+                style="margin-right: 10px;  margin-bottom: -8px; width: 30px; height: 30px;"
+                ></ion-icon>
+                {{persona.nombre}}
+              </ion-label>
+            </ion-card-header>
+            <!-- img -->
+              <img
+                class="foto"
+                src="{{persona.foto}}"
+                style="width: 200px; height: 200px; margin-left: 25%"
+              />
+            <!-- contenido -->
+          <div class="gradient-border">
+            <ion-card-content class="conten-card">
+              <ion-item>
+                <ion-label position="stacked"
+                  >NOMBRE <ion-icon style="width: 20px; height: 20px;" name="person-sharp"></ion-icon>
+                </ion-label>
+                <ion-input placeholder="">{{persona.nombre}}</ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked"
+                  >APELLIDO <ion-icon style="width: 20px; height: 20px;" name="person-sharp"></ion-icon>
+                </ion-label>
+                <ion-input placeholder="">{{persona.apellido}}</ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked"
+                  >INTERES <ion-icon style="width: 20px; height: 20px;" name="heart-circle-sharp"></ion-icon>
+                </ion-label>
+                <ion-input placeholder="">{{persona.interes}}</ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked"
+                  >COMENTARIO
+                  <ion-icon style="width: 20px; height: 20px;" name="chatbubble-ellipses-sharp"></ion-icon>
+                </ion-label>
+                <ion-input placeholder="">{{persona.comentario}}</ion-input>
+              </ion-item>
+            </ion-card-content>
+          </div>
+            <!-- btones -->
+            <div class="ion-text-center" style="padding: 10px">
+              <ion-button
+                [routerLink]="['/persona-update/' + persona.id]"
+                color="warning"
+                >editar</ion-button
+              >
+              <ion-button (click)="delete(persona.id)" color="danger"
+                >eliminar</ion-button
+              >
+            </div>
+        </ion-card>
+    </ion-col>
+  </ion-row>
+
+  <!-- Skeleton screen -->
+  <div *ngIf="hidden == 1" style="margin-top: -20%">
+    <ion-card *ngFor="let i of [1,1,1,1,1]">
+      <ion-item>
+        <ion-avatar style="width: 200px; height: 200px; margin-left: 20%">
+          <ion-skeleton-text animated></ion-skeleton-text>
+        </ion-avatar>
+      </ion-item>
+      <ion-card-header>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 40%"></ion-skeleton-text>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de Personas</ion-title>
+    <ion-buttons slot="start">
+      <!-- <ion-back-button defaultHref="/"></ion-back-button> -->
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <ion-card class="color" color="primary">
+    <ion-card-header class="ion-text-center">
+      <ion-icon name="person-add-sharp"></ion-icon>
+      <ion-label style="font-weight: bold"> Ingreso de Datos </ion-label>
+    </ion-card-header>
+    <ion-item>
+      <th><ion-label position="floating">Nombre: <ion-icon name="create-outline"></ion-icon></ion-label></th>
+      <ion-input
+        placeholder="Ingrese el nombre"
+        [(ngModel)]="persona.nombre"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <th><ion-label position="floating">Apellido: <ion-icon name="create-outline"></ion-icon></ion-label></th>
+      <ion-input
+        placeholder="Ingrese el Apellido"
+        [(ngModel)]="persona.apellido"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <th><ion-label position="floating">Su Interes: <ion-icon name="create-outline"></ion-icon></ion-label></th>
+      <ion-input
+        placeholder="Ingrese el Interes"
+        [(ngModel)]="persona.interes"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <th><ion-label position="floating">Algun Coemntario: <ion-icon name="create-outline"></ion-icon></ion-label></th>
+      <ion-input
+        placeholder="Ingrese un Coemntario"
+        [(ngModel)]="persona.comentario"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <th><ion-label position="floating">Link de Foto: <ion-icon name="create-outline"></ion-icon></ion-label></th>
+      <ion-input
+        placeholder="Ingrese el link"
+        [(ngModel)]="persona.foto"
+        type="text"
+      ></ion-input>
+    </ion-item>
+    <div>
+      <ion-item>
+        <ion-avatar style="width: 100px; height: 100px; margin-left: 35%;">
+          <img src='{{persona.foto}}' style="border: 2px solid white;" />
+        </ion-avatar>
+      </ion-item>
+    </div>
+    <div class="ion-text-center" style="padding: 10px">
+      <ion-button (click)="guardar()" color="warning">Guardar</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

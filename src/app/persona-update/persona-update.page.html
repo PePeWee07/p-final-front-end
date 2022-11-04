@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualizar Persona</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/persona"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card class="color" color="warning" *ngFor="let per of personaSave">
+  <ion-card-header class="ion-text-center">
+    <ion-icon name="person-sharp"></ion-icon>
+    <ion-label style="font-weight: bold;"> Actualizar Datos </ion-label>
+  </ion-card-header>
+  <ion-item>
+    <th><ion-label><ion-icon name="create-outline"></ion-icon> ID: </ion-label></th>
+    <ion-input type="text" style="margin-left: 10px; margin-top: 3px;" disabled="true">{{profileId}}</ion-input>
+  </ion-item>
+  <ion-item>
+    <th><ion-label> <ion-icon name="create-outline"></ion-icon>Nombre:</ion-label></th>
+    <ion-input type="text" style="margin-left: 10px; margin-top: 3px;" [(ngModel)]="persona.nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <th><ion-label> <ion-icon name="create-outline"></ion-icon>Apellido:</ion-label></th>
+    <ion-input type="text" style="margin-left: 10px; margin-top: 3px;" [(ngModel)]="persona.apellido"></ion-input>
+  </ion-item>
+  <ion-item>
+    <th><ion-label> <ion-icon name="create-outline"></ion-icon>Su Interes:</ion-label></th>
+    <ion-input type="text" style="margin-left: 10px; margin-top: 3px;" [(ngModel)]="persona.interes"></ion-input>
+  </ion-item>
+  <ion-item>
+    <th><ion-label> <ion-icon name="create-outline"></ion-icon>Algun Coementario:</ion-label></th>
+    <ion-input type="text" style="margin-left: 10px; margin-top: 3px;" [(ngModel)]="persona.comentario"></ion-input>
+  </ion-item>
+  <ion-item>
+    <th><ion-label> <ion-icon name="create-outline"></ion-icon>Foto:</ion-label></th>
+    <ion-input type="url" clear-input style="margin-left: 10px; margin-top: 3px;" [(ngModel)]="persona.foto"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <th><ion-label> <ion-icon name="create-outline"></ion-icon>Anterior Foto:</ion-label></th>
+    <ion-input type="url" disabled="true" clear-input style="margin-left: 10px; margin-top: 3px;" [(ngModel)]="newFoto"></ion-input>
+  </ion-item>
+
+<ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="5">
+        <ion-item>
+          <ion-avatar style="width: 100px; height: 100px;">
+            <img src='{{newFoto}}' />
+          </ion-avatar>
+        </ion-item>
+      </ion-col>
+      <ion-col size="2">
+        <ion-icon name="arrow-forward-sharp" style="margin-top: 45px; width: 40px;"></ion-icon>
+      </ion-col>
+      <ion-col size="5">
+        <ion-item>
+          <ion-avatar style="width: 100px; height: 100px;">
+            <img src="{{per.foto}}" />
+          </ion-avatar>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-item>
+
+  
+
+  <div class="ion-text-center" style="padding: 10px">
+    <ion-button (click)="actualizar()" color="success">Actualizar</ion-button>
+    <ion-button (click)="cargar(per)" color="">Cargar</ion-button>
+  </div>
+</ion-card>
+
+</ion-content>
